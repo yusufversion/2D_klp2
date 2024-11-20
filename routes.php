@@ -1,29 +1,25 @@
 <?php
 // routes.php
 
-require_once 'app/controllers/UserController.php';
+require_once 'app/controllers/BukuController.php';
 
-$controller = new UserController();
+$controller = new BukuController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-//misal url kosong mk akan menampilkan index yg di userController
-//muncul halaman index 
-if ($url == '/user/index' || $url == '/') {
-    $controller->index(); //usercontroller yg di dalam nya ada metod index
-
-} elseif ($url == '/user/create' && $requestMethod == 'GET') {
+if ($url == '/Buku/index' || $url == '/') {
+    $controller->index();
+} elseif ($url == '/Buku/create' && $requestMethod == 'GET') {
     $controller->create();
-
-} elseif ($url == '/user/store' && $requestMethod == 'POST') {
+} elseif ($url == '/Buku/store' && $requestMethod == 'POST') {
     $controller->store();
-} elseif (preg_match('/\/user\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+} elseif (preg_match('/\/Buku\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
     $controller->edit($userId);
-} elseif (preg_match('/\/user\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
+} elseif (preg_match('/\/Buku\/update\/(\d+)/', $url, $matches) && $requestMethod == 'POST') {
     $userId = $matches[1];
     $controller->update($userId, $_POST);
-} elseif (preg_match('/\/user\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
+} elseif (preg_match('/\/Buku\/delete\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
     $userId = $matches[1];
     $controller->delete($userId);
 } else {
