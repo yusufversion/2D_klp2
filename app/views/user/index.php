@@ -1,12 +1,12 @@
 <!-- app/views/user/index.php -->
-<h2>Daftar Pengguna</h2>
-<a href="/user/create">Tambah Pengguna Baru</a>
+<h2>Daftar Buku</h2>
+<a href="/user/create">Tambah Daftar Buku</a>
 <ul>
-    <?php foreach ($users as $user): ?>
+    <?php foreach ($BukuController as $Buku): ?>
         <div>
-            <p><?= htmlspecialchars($user['name']) ?> - <?= htmlspecialchars($user['email']) ?>
-            <a href="/user/edit/<?php echo $user['id']; ?>">Edit</a> |
-            <a href="/user/delete/<?php echo $user['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+            <p><?= htmlspecialchars($Buku['id_buku']) ?> - <?= htmlspecialchars($Buku['judul_buku']) ?> - <?= htmlspecialchars($Buku['pengarang']) ?> - <?= htmlspecialchars($Buku['tahun']) ?>
+            <a href="/user/edit/<?php echo $Buku['id_buku']; ?>">Edit</a> |
+            <a href="/user/delete/<?php echo $Buku['id_buku']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
             </p>
         </div>
     <?php endforeach; ?>
