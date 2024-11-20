@@ -10,7 +10,7 @@ class User {
     }
 
     public function getAllUsers() {
-        $query = $this->db->query("SELECT * FROM users");
+        $query = $this->db->query("SELECT * FROM buku");
         return $query->fetchAll(PDO::FETCH_ASSOC);
     }
 
