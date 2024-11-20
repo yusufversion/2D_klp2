@@ -7,10 +7,14 @@ $controller = new UserController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
+//misal url kosong mk akan menampilkan index yg di userController
+//muncul halaman index 
 if ($url == '/user/index' || $url == '/') {
-    $controller->index();
+    $controller->index(); //usercontroller yg di dalam nya ada metod index
+
 } elseif ($url == '/user/create' && $requestMethod == 'GET') {
     $controller->create();
+
 } elseif ($url == '/user/store' && $requestMethod == 'POST') {
     $controller->store();
 } elseif (preg_match('/\/user\/edit\/(\d+)/', $url, $matches) && $requestMethod == 'GET') {
