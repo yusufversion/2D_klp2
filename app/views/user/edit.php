@@ -1,3 +1,8 @@
+<?php
+    require_once '../app/controllers/NavController.php';
+    $navController = new NavController();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,25 +15,9 @@
 </head>
 
 <body>
-    <!-- Navbar -->
-    <nav class="navbar bg-success navbar-expand-lg">
-        <div class="container">
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <strong><a class="nav-link" href="/buku/index">Data Buku</a></strong>
-                    </li>
-                    <li class="nav-item">
-                        <strong><a class="nav-link" href="/loans/index">Data Peminjaman</a></strong>
-                    </li>
-                    <li class="nav-item">
-                        <strong><a class="nav-link active" aria-current="page" href="/user/index">Data Pengguna</a></strong>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
+    <?php  $navController->nav(); ?>
+    
     <!-- Form Edit -->
     <div class="container mt-5">
         <h2 class="text-center mb-4">Edit Pengguna</h2>

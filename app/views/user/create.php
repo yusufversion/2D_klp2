@@ -1,3 +1,8 @@
+<?php
+    require_once '../app/controllers/NavController.php';
+    $navController = new NavController();
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -7,26 +12,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-      <!-- Navbar -->
-      <nav class="navbar bg-success navbar-expand-lg">
-        <div class="container">
-            <a class="navbar-brand" href="#">Sistem Peminjaman Buku</a>
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <strong><a class="nav-link" href="/buku/index">Data Buku</a></strong>
-                    </li>
-                    <li class="nav-item">
-                        <strong><a class="nav-link" href="/loans/index">Data Peminjaman</a></strong>
-                    </li>
-                    <li class="nav-item">
-                        <strong><a class="nav-link active" href="/user/index">Data Pengguna</a></strong>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
+    <?php  $navController->nav(); ?>
+    
     <div class="container mt-5">
         <h2 class="text-center mb-4">Tambah Pengguna Baru</h2>
         <form action="/user/store" method="POST" class="p-4 border rounded shadow-sm bg-light">
