@@ -55,7 +55,7 @@
                 </table>
 
                 <div class="text-center">
-                    <a href="/loans/index" class="btn btn-primary">Kembali ke Daftar Pemainjam</a>
+                    <a href="/loans/index" class="btn btn-primary">Kembali ke Daftar Peminjam</a>
                 </div>
             </div>
         </div>

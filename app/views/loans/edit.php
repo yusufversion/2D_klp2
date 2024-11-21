@@ -1,4 +1,7 @@
 <!-- app/views/loans/edit.php -->
+<?php require_once '../app/controllers/NavController.php'; 
+$navController = new NavController(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,24 +12,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-      <!-- Navbar -->
-      <nav class="navbar bg-success navbar-expand-lg">
-        <div class="container">
-            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <strong><a class="nav-link" href="/buku/index">Data Buku</a></strong>
-                    </li>
-                    <li class="nav-item">
-                        <strong><a class="nav-link active" aria-current="page" href="/loans/index">Data Peminjaman</a></strong>
-                    </li>
-                    <li class="nav-item">
-                        <strong><a class="nav-link" href="/user/index">Data Pengguna</a></strong>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+
+<?php $navController->nav(); ?>
 
     <div class="container mt-5">
         <h2 class="text-center mb-4">Edit Data Peminjaman Buku</h2>
