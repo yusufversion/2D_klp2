@@ -16,6 +16,9 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
+                        <strong><a class="nav-link" href="/home">Beranda</a></strong>
+                    </li>
+                    <li class="nav-item">
                         <strong><a class="nav-link" href="/buku/index">Data Buku</a></strong>
                     </li>
                     <li class="nav-item">
@@ -55,7 +58,6 @@
                         <td><?= htmlspecialchars($user['no_anggota']) ?></td>
                         <td>
                             <a href="/user/edit/<?= $user['id_user']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="/loans/create" class="btn btn-success btn-sm">Riwayat Peminjaman</a>
                             <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $user['id_user']; ?>)">Delete</button>
                         </td>
                     </tr>

@@ -29,6 +29,10 @@
     <div class="container mt-4">
         <h2 class="text-center mb-4">Tambah Data Peminjaman Buku</h2>
         <form action="/loans/store" method="POST">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9f42b27c7e16b0a7d91e0d21d782d588f76d49bb
             <div class="mb-3">
                 <label for="id_buku" class="form-label">ID Buku</label>
                 <select class="form-select" aria-label="Default select example">

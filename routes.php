@@ -4,18 +4,26 @@
 require_once 'app/controllers/UserController.php';
 require_once 'app/controllers/BukuController.php';
 require_once 'app/controllers/TabelLoansController.php';
+require_once 'app/controllers/HomeController.php';
+require_once 'app/controllers/NavController.php';
 
 // Inisialisasi objek controller
 $userController = new UserController();
 $bukuController = new BukuController();
 $loansController = new LoansController();
+$homeController = new HomeController();
+$navController = new NavController();
 
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
+$navController->nav();
+
 // Routing untuk UserController
-if ($url == '/user/index' || $url == '/') {
-    $userController->index();
+if ($url == '/home' || $url == '/') {
+    $homeController->home();
+}elseif ($url == '/user/index' || $url == '/user') {
+        $userController->index();
 } elseif ($url == '/user/create' && $requestMethod == 'GET') {
     $userController->create();
 } elseif ($url == '/user/store' && $requestMethod == 'POST') {
