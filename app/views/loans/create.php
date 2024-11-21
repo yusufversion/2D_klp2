@@ -31,6 +31,11 @@
         <form action="/loans/store" method="POST">
 
             <div class="mb-3">
+                <label for="tgl_pinjam" class="form-label">ID Peminjaman</label>
+                <input type="number" id="id_loans" name="id_loans" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
                 <label for="id_buku" class="form-label">ID Buku</label>
                 <select class="form-select" aria-label="Default select example" name="id_buku">
                 <option selected>Pilih ID Buku</option>
