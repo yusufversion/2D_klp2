@@ -1,3 +1,8 @@
+<?php
+    require_once '../app/controllers/NavController.php';
+    $navController = new NavController();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -39,7 +44,8 @@
 
 <body>
    
-
+    <?php  $navController->nav(); ?>
+    
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-text">

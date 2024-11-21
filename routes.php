@@ -17,7 +17,7 @@ $navController = new NavController();
 $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
-$navController->nav();
+
 
 // Routing untuk UserController
 if ($url == '/home' || $url == '/') {
