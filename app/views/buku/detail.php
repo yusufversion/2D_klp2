@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar bg-success navbar-expand-lg">
+    <nav class="navbar bg-info navbar-expand-lg">
         <div class="container">
         <a class="navbar-brand" href="#">Sistem Peminjaman Buku</a>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">

@@ -8,8 +8,7 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar bg-danger
-     navbar-expand-lg">
+    <nav class="navbar bg-info navbar-expand-lg">
         <div class="container">
         <a class="navbar-brand" href="#">Sistem Peminjaman Buku</a>
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
@@ -52,7 +51,6 @@
                         <td><?= htmlspecialchars($Buku['tahun']) ?></td>
                         <td>
                             <a href="/buku/edit/<?php echo $Buku['id_buku']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="/loans/create" class="btn btn-success btn-sm">Riwayat Peminjaman</a>
                             <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $Buku['id_buku']; ?>)">Delete</button>
                         </td>
                     </tr>
