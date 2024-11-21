@@ -1,6 +1,10 @@
+<?php
+require_once '../app/controllers/NavController.php'; 
+$navController = new NavController();
+?>
+
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,10 +40,8 @@
         }
     </style>
 </head>
-
 <body>
-   
-
+<?php $navController->nav(); ?>
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-text">
