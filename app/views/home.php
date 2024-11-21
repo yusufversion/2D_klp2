@@ -1,4 +1,4 @@
-<?php
+<?php 
 require_once '../app/controllers/NavController.php'; 
 $navController = new NavController();
 ?>
@@ -45,7 +45,7 @@ $navController = new NavController();
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="hero-text">
-            <h1>Selamat Datang di Sistem Peminjaman Buku</h1>
+            <h1>Selamat Datang di Sistem Peminjaman Buku Digital</h1>
             <p>Kelola buku, pinjaman, dan pengguna dengan mudah dalam satu sistem terintegrasi.</p>
             <a href="/buku/index" class="btn btn-primary btn-lg mt-3">Lihat Koleksi Buku</a>
         </div>
@@ -84,14 +84,7 @@ $navController = new NavController();
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="mt-auto">
-        <div class="container">
-            <p>&copy; 2024 Sistem Peminjaman Buku. All rights reserved.</p>
-        </div>
-    </footer>
-
+    <?php $navController->footer(); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

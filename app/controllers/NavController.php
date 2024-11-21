@@ -6,4 +6,8 @@ class NavController {
     public function nav() {
         require_once '../app/views/nav/navbar.php';
     }
+
+    public function footer() {
+        require_once '../app/views/nav/footer.php';
+    }
 }

@@ -19,9 +19,11 @@ $navController = new NavController();
     <div class="container mt-4">
         <h2 class="text-center mb-4">Daftar Pengguna</h2>
         <a href="/user/create" class="btn btn-primary mb-3">Tambah Pengguna Baru</a>
-
-        <table class="table table-bordered table-striped">
-            <thead class="table-dark">
+        <div class="row">
+            <div class="card">
+                <div class="card-body">
+                <table class="table table-bordered table-striped">
+            <thead class="table-dark text-center">
                 <tr>
                     <th>ID Pengguna</th>
                     <th>Nama</th>
@@ -31,7 +33,7 @@ $navController = new NavController();
                     <th>Aksi</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="text-center">
                 <?php foreach ($users as $user): ?>
                     <tr>
                         <td>P-<?= htmlspecialchars($user['id_user']) ?></td>
@@ -47,6 +49,9 @@ $navController = new NavController();
                 <?php endforeach; ?>
             </tbody>
         </table>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Modal Konfirmasi Hapus -->
@@ -73,7 +78,8 @@ $navController = new NavController();
             </div>
         </div>
     </div>
-
+    <br>
+    <?php $navController->footer(); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
