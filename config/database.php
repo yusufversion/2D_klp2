@@ -2,7 +2,7 @@
 // config/database.php
 class Database {
     private $host = 'localhost';
-    private $db_name = '2D_klp4';
+    private $db_name = '2d_klp4';
     private $username = 'root';
     private $password = '';
     private $conn;
