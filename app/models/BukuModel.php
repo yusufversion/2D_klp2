@@ -32,15 +32,15 @@ class Buku {
 
     // Update user data by ID
     public function update($id_buku, $data) {
-        $query = "UPDATE tabel_buku SET id_buku = :id_buku, judul_buku = :judul_buku, pengarang = :pengarang, tahun = :tahun WHERE id_buku = :id_buku";
+        $query = "UPDATE tabel_buku SET judul_buku = :judul_buku, pengarang = :pengarang, tahun = :tahun WHERE id_buku = :id_buku";
         $stmt = $this->db->prepare($query);
-        $stmt->bindParam(':id_buku', $data['id_buku']);
+        $stmt->bindParam(':id_buku', $id_buku);
         $stmt->bindParam(':judul_buku', $data['judul_buku']);
         $stmt->bindParam(':pengarang', $data['pengarang']);
         $stmt->bindParam(':tahun', $data['tahun']);
-        $stmt->bindParam(':id_buku', $id_buku);
         return $stmt->execute();
     }
+    
 
     // Delete user by ID
     public function delete($id_buku) {
@@ -49,4 +49,13 @@ class Buku {
         $stmt->bindParam(':id_buku', $id_buku);
         return $stmt->execute();
     }
+    public function getBukuById($id_buku)
+    {
+        $stmt = $this->db->prepare("SELECT * FROM tabel_buku WHERE id_buku = :id_buku");
+        $stmt->bindParam(':id_buku', $id_buku);
+        $stmt->execute();
+    
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
 }

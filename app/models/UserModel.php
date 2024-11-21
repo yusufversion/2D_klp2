@@ -58,4 +58,10 @@ class User
         $stmt->bindParam(':id_user', $id_user);
         return $stmt->execute();
     }
+    public function getUserById($id_user) {
+        $stmt = $this->db->prepare("SELECT * FROM tabel_user WHERE id_user = :id_user");
+        $stmt->bindParam(':id_user', $id_user, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

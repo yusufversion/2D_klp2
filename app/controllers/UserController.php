@@ -34,11 +34,13 @@ class UserController
         header('Location: /user/index');
     }
     // Show the edit form with the user data
-    public function edit($id_user)
-    {
-        $user = $this->userModel->find($id_user); // Assume find() gets user by ID
-        require_once __DIR__ . '/../views/user/edit.php';
-    }
+  // UserController.php
+
+public function edit($id_user) {
+    $user = $this->userModel->getUserById($id_user); // Mengambil data pengguna berdasarkan ID
+    require_once __DIR__ . '/../views/user/edit.php';
+}
+
 
     // Process the update request
     public function update($id_user, $data)
@@ -60,5 +62,9 @@ class UserController
         } else {
             echo "Failed to delete user.";
         }
+    }
+    public function detail($id_user) {
+        $user = $this->userModel->getUserById($id_user);
+        require_once '../app/views/user/detail.php'; // View untuk detail pengguna
     }
 }

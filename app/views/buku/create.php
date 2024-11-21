@@ -1,12 +1,49 @@
-<!-- app/views/user/create.php -->
-<h2>Tambah Daftar Buku</h2>
-<form action="/Buku/store" method="POST">
-    <label for="judul_buku">Judul Buku:</label><br>
-    <input type="text" name="judul_buku" id="judul_buku" required><br>
-    <label for="pengarang">Pengarang:</label><br>
-    <input type="text" name="pengarang" id="pengarang" required><br>
-    <label for="tahun">Tahun:</label><br>
-    <input type="int" name="tahun" id="tahun" required><br>
-    <button type="submit">Simpan</button>
-</form>
-
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar bg-success navbar-expand-lg">
+        <div class="container">
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <strong><a class="nav-link active" aria-current="page" href="/buku/index">Data Buku</a></strong>
+                    </li>
+                    <li class="nav-item">
+                        <strong><a class="nav-link" href="/loans/index">Data Peminjaman</a></strong>
+                    </li>
+                    <li class="nav-item">
+                        <strong><a class="nav-link" href="/user/index">Data Pengguna</a></strong>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Tambah Daftar Buku</h2>
+        <form action="/buku/store" method="POST" class="p-4 border rounded bg-light">
+            <div class="mb-3">
+                <label for="judul_buku" class="form-label">Judul Buku:</label>
+                <input type="text" name="judul_buku" id="judul_buku" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="pengarang" class="form-label">Pengarang:</label>
+                <input type="text" name="pengarang" id="pengarang" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="tahun" class="form-label">Tahun:</label>
+                <input type="number" name="tahun" id="tahun" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-success">Simpan</button>
+            <a href="/buku/index" class="btn btn-secondary">Kembali</a>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
