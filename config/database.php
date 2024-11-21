@@ -1,11 +1,6 @@
 <?php
 // config/database.php
-<<<<<<< HEAD
 class Database {
-=======
-class Database
-{
->>>>>>> 396fb3a87c1b5c21c14999bcbdcd8ea59545a66f
     private $host = '160.19.166.42';
     private $db_name = '2D_klp4';
     private $username = '2D_klp4';
