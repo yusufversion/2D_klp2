@@ -18,7 +18,6 @@ $url = $_SERVER['REQUEST_URI'];
 $requestMethod = $_SERVER['REQUEST_METHOD'];
 
 
-
 // Routing untuk UserController
 if ($url == '/home' || $url == '/') {
     $homeController->home();

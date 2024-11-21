@@ -1,7 +1,11 @@
+
+
+
 <?php
 require_once '../app/controllers/NavController.php';
 $navController = new NavController();
 ?>
+
 
 <!doctype html>
 <html lang="en">
