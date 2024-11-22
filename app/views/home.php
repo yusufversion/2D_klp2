@@ -12,7 +12,6 @@ $navController = new NavController();
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .hero-section {
-            background: url('https://source.unsplash.com/1600x900/?library,books') no-repeat center center/cover;
             color: blue;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             height: 100vh;
