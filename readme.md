@@ -1,7 +1,31 @@
 # Praktikum Pemgrograman Web 2 - Politeknik Negeri Cilacap
 
-## Informasi Umum
-Proyek ini merupakan bagian dari kegiatan Praktisi Mengajar batch 5, antara [Politeknik Negeri Cilacap](https://pnc.ac.id/) dengan praktisi [I Nyoman Indra Darmawan](https://nyoman.id) untuk mata kuliah Praktikum Pemgrograman Web 2
+# Informasi Tambahan (Penting!!!.)
+
+Proyek ini jika harus di jalankan dengan server maka maka terapkan server tersebut di bagian database.php 
+
+``` php 
+
+    private $host = '160.19.166.42'; // untuk servernya
+    private $db_name = '2D_klp4';   // Untuk database yang akan di jalankan
+    private $username = '2D_klp4';  // masukan username yaang diberikan oleh server
+    private $password = 'rp4jGe]*c@b*lQRt'; // masukan passowrd yang di berikan oleh server
+    private $conn;
+
+```
+
+jika akan menerapkan web ini untuk di jalankan secara local di setiap pc masing masing orang maka ganti setrukturnya menjadi
+
+``` php
+
+    private $host = 'localhost'; // untuk servernya
+    private $db_name = '2D_klp4';   // Untuk database yang akan di jalankan
+    private $username = 'root';  // masukan username yaang diberikan oleh server
+    private $password = ''; // masukan passowrd yang di berikan oleh server
+    private $conn;
+
+```
+
 
 ## Deskripsi Proyek
 Proyek ini merupakan aplikasi web sederhana yang menerapkan arsitektur Model-View-Controller (MVC) dengan menggunakan konsep Pemrograman Berorientasi Objek (OOP). Aplikasi ini adalah sebagai contoh yang dapat gunakan sebagai acuan bagi masing-masing kelompok dalam mengerjakan tugas.
