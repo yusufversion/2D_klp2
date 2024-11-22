@@ -51,7 +51,7 @@ $navController = new NavController(); ?>
             <td><?= htmlspecialchars($loans['tgl_kembali']) ?></td>
             <td>
                 <a href="/loans/edit/<?= htmlspecialchars($loans['id_loans']) ?>" class="btn btn-warning btn-sm">Edit</a>
-                <a href="/loans/delete/<?php echo $Buku['id_loans']; ?>"  class="btn btn-danger btn-sm" onclick="return confirm('Kamu yakin Menghapus Data Peminjaman ini?')">Hapus</a>
+                <a href="/loans/delete/<?php echo $loans['id_loans']; ?>"  class="btn btn-danger btn-sm" onclick="return confirm('Kamu yakin Menghapus Data Peminjaman ini?')">Hapus</a>
             </td>
         </tr>
     <?php endforeach; ?>

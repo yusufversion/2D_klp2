@@ -43,7 +43,7 @@ $navController = new NavController();
                         <td><?= htmlspecialchars($user['no_anggota']) ?></td>
                         <td>
                             <a href="/user/edit/<?= $user['id_user']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <a href="/user/delete/<?php echo $Buku['id_user']; ?>"  class="btn btn-danger btn-sm" onclick="return confirm('Kamu yakin Menghapus Data Pengguna ini?')">Hapus</a>
+                            <a href="/user/delete/<?php echo $user['id_user']; ?>"  class="btn btn-danger btn-sm" onclick="return confirm('Kamu yakin Menghapus Data Pengguna ini?')">Hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
