@@ -13,8 +13,8 @@ $navController = new NavController();
     <style>
         .hero-section {
             background: url('https://source.unsplash.com/1600x900/?library,books') no-repeat center center/cover;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            color: blue;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
             height: 100vh;
             display: flex;
             align-items: center;

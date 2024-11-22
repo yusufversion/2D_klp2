@@ -43,7 +43,7 @@ $navController = new NavController();
                         <td><?= htmlspecialchars($user['no_anggota']) ?></td>
                         <td>
                             <a href="/user/edit/<?= $user['id_user']; ?>" class="btn btn-warning btn-sm">Edit</a>
-                            <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= $user['id_user']; ?>)">Delete</button>
+                            <a href="/user/delete/<?php echo $Buku['id_user']; ?>"  class="btn btn-danger btn-sm" onclick="return confirm('Kamu yakin Menghapus Data Pengguna ini?')">Hapus</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -53,66 +53,8 @@ $navController = new NavController();
             </div>
         </div>
     </div>
-
-    <!-- Modal Konfirmasi Hapus -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Apakah Anda yakin ingin menghapus pengguna ini?</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="confirmDeleteCheckbox">
-                        <label class="form-check-label" for="confirmDeleteCheckbox">
-                            Centang untuk mengonfirmasi penghapusan.
-                        </label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-danger" id="confirmDeleteButton" disabled>Hapus</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <?php $navController->footer(); ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        let deleteUserId;
-
-        function confirmDelete(id_user) {
-            const modal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-            const checkbox = document.getElementById('confirmDeleteCheckbox');
-            const confirmButton = document.getElementById('confirmDeleteButton');
-
-            // Reset the checkbox and button state
-            checkbox.checked = false;
-            confirmButton.disabled = true;
-
-            // Save user ID to delete
-            deleteUserId = id_user;
-
-            // Show the modal
-            modal.show();
-
-            // Enable the delete button when checkbox is checked
-            checkbox.addEventListener('change', function() {
-                confirmButton.disabled = !checkbox.checked;
-            });
-
-            // Add event listener for the delete button
-            confirmButton.addEventListener('click', function() {
-                if (checkbox.checked) {
-                    window.location.href = '/user/delete/' + deleteUserId;
-                }
-            });
-        }
-    </script>
 </body>
+<br>
+<?php $navController->footer(); ?>
 
 </html>

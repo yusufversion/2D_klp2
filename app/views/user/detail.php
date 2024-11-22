@@ -51,12 +51,12 @@ $navController = new NavController();
                 </table>
             </div>
         </div>
-        <br>
-        <?php $navController->footer(); ?>
         <div class="text-center">
             <a href="/loans/index" class="btn btn-success">Kembali ke Daftar Peminjaman</a>
         </div>
     </div>
+    <br>
+    <?php $navController->footer(); ?>
 
 </body>
 

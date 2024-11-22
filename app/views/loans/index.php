@@ -13,14 +13,14 @@ $navController = new NavController(); ?>
     
 <?php $navController->nav(); ?>
 
+<div class="container mt-4">
     <h2 class="text-center mb-4">Daftar Peminjaman Buku</h2>
-        <div class="container">
         <a href="/loans/create" class="btn btn-primary mb-3">Tambah Data Peminjaman Buku++ </a>
         <div class="row">
             <div class="card">
                 <div class="card-body">
         <table class="table table-bordered table-striped">
-            <thead class="table-dark">
+            <thead class="table-dark text-center">
                 <tr>
                     <th>ID Peminjaman</th>
                     <th>ID Buku</th>
@@ -30,7 +30,7 @@ $navController = new NavController(); ?>
                     <th>Aksi</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="text-center">
 
     <?php foreach ($TabelLoansController as $loans): ?>
         <tr>
@@ -51,7 +51,7 @@ $navController = new NavController(); ?>
             <td><?= htmlspecialchars($loans['tgl_kembali']) ?></td>
             <td>
                 <a href="/loans/edit/<?= htmlspecialchars($loans['id_loans']) ?>" class="btn btn-warning btn-sm">Edit</a>
-                <button class="btn btn-danger btn-sm" onclick="confirmDelete(<?= htmlspecialchars($loans['id_loans']) ?>)">Delete</button>
+                <a href="/loans/delete/<?php echo $Buku['id_loans']; ?>"  class="btn btn-danger btn-sm" onclick="return confirm('Kamu yakin Menghapus Data Peminjaman ini?')">Hapus</a>
             </td>
         </tr>
     <?php endforeach; ?>
@@ -62,59 +62,9 @@ $navController = new NavController(); ?>
             </div>
         </div>
     </div>
-    <!-- Modal Konfirmasi Hapus -->
-    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Penghapusan</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Apakah Anda yakin ingin menghapus peminjaman ini?</p>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="confirmDeleteCheckbox">
-                        <label class="form-check-label" for="confirmDeleteCheckbox">
-                            Centang untuk mengonfirmasi penghapusan.
-                        </label>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
-                    <button type="button" class="btn btn-danger" id="confirmDeleteButton" disabled>Hapus</button>
-                </div>
-            </div>
-        </div>
-    </div>
 <br>
 <?php $navController->footer(); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <script>
-        function confirmDelete(id_loans) {
-            const modal = new bootstrap.Modal(document.getElementById('confirmDeleteModal'));
-            const checkbox = document.getElementById('confirmDeleteCheckbox');
-            const confirmButton = document.getElementById('confirmDeleteButton');
-
-            // Reset the checkbox and button state
-            checkbox.checked = false;
-            confirmButton.disabled = true;
-
-            // Show the modal
-            modal.show();
-
-            // Enable the delete button when checkbox is checked
-            checkbox.addEventListener('change', function() {
-                confirmButton.disabled = !checkbox.checked;
-            });
-
-            // Add event listener for the delete button
-            confirmButton.addEventListener('click', function() {
-                if (checkbox.checked) {
-                    window.location.href = '/loans/delete/' + id_loans;
-                }
-            });
-        }
     </script>
 </body>
 </html>
